@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Backend
+Utiliza a API do repositório [ToDoList-SpringAPI](https://github.com/Danie1Net0Estudos/ToDoList-SpringAPI).
+
 ## Available Scripts
 
 In the project directory, you can run:
