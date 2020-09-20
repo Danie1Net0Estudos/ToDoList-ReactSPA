@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import NavigationBar from './Components/Shared/NavigationBar'
+import Footer from './Components/Shared/Footer'
+import ListToDo from './Components/Pages/ToDo/ListToDo'
+import CreateToDo from './Components/Pages/ToDo/CreateToDo'
+import EditToDo from './Components/Pages/ToDo/EditToDo'
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavigationBar/>
+
+      <Router>
+        <Switch>
+          <Route exact path="/tarefas" component={ ListToDo }/>
+          <Route exact path="/tarefas/novo" component={ CreateToDo }/>
+          <Route exact path="/tarefas/:id/editar" component={ EditToDo }/>
+        </Switch>
+      </Router>
+
+      <Footer/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
